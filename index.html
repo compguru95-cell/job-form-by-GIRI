@@ -1,0 +1,118 @@
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<title>Job Application Form</title>
+
+<style>
+
+body{
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to right,#74ebd5,#ACB6E5);
+  margin:0;
+  padding:0;
+}
+
+.container{
+  width: 500px;
+  margin: 50px auto;
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0px 6px 20px rgba(0,0,0,0.3);
+}
+
+h1{
+  text-align:center;
+  color:#0b3d91;
+}
+
+label{
+  font-weight:bold;
+  display:block;
+  margin-top:15px;
+}
+
+input, select, textarea{
+  width:100%;
+  padding:10px;
+  margin-top:5px;
+  border-radius:6px;
+  border:1px solid #ccc;
+  font-size:16px;
+}
+
+textarea{
+  resize:none;
+}
+
+button{
+  width:100%;
+  padding:12px;
+  margin-top:20px;
+  background:#0b3d91;
+  color:white;
+  border:none;
+  border-radius:8px;
+  font-size:18px;
+  cursor:pointer;
+}
+
+button:hover{
+  background:#072a66;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Job Application Form</h1>
+
+<form>
+
+<label>Full Name</label>
+<input type="text" placeholder="Enter your name" required>
+
+<label>Email Address</label>
+<input type="email" placeholder="Enter your email" required>
+
+<label>Phone Number</label>
+<input type="tel" placeholder="Enter phone number">
+
+<label>Position Applying For</label>
+<select>
+<option>Software Developer</option>
+<option>Web Designer</option>
+<option>System Administrator</option>
+<option>Data Analyst</option>
+</select>
+
+<label>Gender</label>
+<input type="radio" name="gender"> Male
+<input type="radio" name="gender"> Female
+<input type="radio" name="gender"> Other
+
+<label>Skills</label>
+<input type="checkbox"> HTML
+<input type="checkbox"> CSS
+<input type="checkbox"> JavaScript
+<input type="checkbox"> Python
+
+<label>Upload Resume</label>
+<input type="file">
+
+<label>Address</label>
+<textarea rows="4" placeholder="Enter your address"></textarea>
+
+<button type="submit">Submit Application</button>
+
+</form>
+
+</div>
+
+</body>
+</html>
+
