@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alpha Giri Store – Premium Collection</title>
+  <link rel="stylesheet" href="INDEX.CSS" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ░░ LOADING SCREEN ░░ -->
+  <div id="loader">
+    <div class="loader-inner">
+      <div class="loader-logo">α</div>
+      <div class="loader-bar"><span></span></div>
+      <p>Alpha Giri Store</p>
+    </div>
+  </div>
+
+  <!-- ░░ SCROLL TO TOP ░░ -->
+  <button id="scrollTop" aria-label="Scroll to top">↑</button>
+
+  <!-- ░░ TOAST NOTIFICATION ░░ -->
+  <div id="toast"></div>
+
+  <!-- ░░ NAVBAR ░░ -->
+  <header id="navbar">
+    <nav class="nav-container">
+      <a href="#" class="nav-logo" data-page="home">
+        <span class="logo-alpha">α</span>
+        <span class="logo-text">Alpha Giri Store</span>
+      </a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#" data-page="home" class="nav-link active">Home</a></li>
+        <li><a href="#" data-page="products" class="nav-link">Products</a></li>
+        <li><a href="#" data-page="about" class="nav-link">About</a></li>
+        <li><a href="#" data-page="contact" class="nav-link">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <span class="theme-icon">☀</span>
+        </button>
+        <button class="cart-btn" data-page="cart" id="cartBtn">
+          <span class="cart-icon">🛒</span>
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ░░ MAIN CONTENT AREA ░░ -->
+  <main id="appMain">
+
+    <!-- ════════════════════════════════
+         HOME PAGE
+    ════════════════════════════════ -->
+    <section id="page-home" class="page active">
+
+      <!-- Hero Slider -->
+      <div class="hero-slider" id="heroSlider">
+        <div class="slide slide-1 active">
+          <div class="slide-content">
+            <span class="slide-tag">New Arrival 2025</span>
+            <h1>Elevate Your<br/><em>Style Game</em></h1>
+            <p>Premium fashion curated for the bold.</p>
+            <button class="btn-gold" data-page="products">Shop Now</button>
+          </div>
+          <div class="slide-visual">
+            <div class="visual-ring"></div>
+            <div class="visual-card">
+              <div class="visual-icon">👑</div>
+              <div class="visual-label">Premium Quality</div>
+            </div>
+          </div>
+        </div>
+        <div class="slide slide-2">
+          <div class="slide-content">
+            <span class="slide-tag">Limited Edition</span>
+            <h1>Luxury at<br/><em>Every Price</em></h1>
+            <p>Exclusive collections, unbeatable value.</p>
+            <button class="btn-gold" data-page="products">Explore</button>
+          </div>
+          <div class="slide-visual">
+            <div class="visual-ring ring-2"></div>
+            <div class="visual-card card-2">
+              <div class="visual-icon">💎</div>
+              <div class="visual-label">Exclusive Deals</div>
+            </div>
+          </div>
+        </div>
+        <div class="slide slide-3">
+          <div class="slide-content">
+            <span class="slide-tag">Free Shipping Over $50</span>
+            <h1>Shop Smart,<br/><em>Live Bold</em></h1>
+            <p>Thousands of products, one destination.</p>
+            <button class="btn-gold" data-page="products">Discover</button>
+          </div>
+          <div class="slide-visual">
+            <div class="visual-ring ring-3"></div>
+            <div class="visual-card card-3">
+              <div class="visual-icon">🚀</div>
+              <div class="visual-label">Fast Delivery</div>
+            </div>
+          </div>
+        </div>
+        <!-- Slider Controls -->
+        <button class="slider-prev" id="sliderPrev">‹</button>
+        <button class="slider-next" id="sliderNext">›</button>
+        <div class="slider-dots" id="sliderDots">
+          <span class="dot active" data-idx="0"></span>
+          <span class="dot" data-idx="1"></span>
+          <span class="dot" data-idx="2"></span>
+        </div>
+      </div>
+
+      <!-- Stats Bar -->
+      <div class="stats-bar">
+        <div class="stat"><strong id="stat1">0</strong><span>Products</span></div>
+        <div class="stat"><strong id="stat2">0</strong><span>Happy Customers</span></div>
+        <div class="stat"><strong id="stat3">0</strong><span>Brands</span></div>
+        <div class="stat"><strong id="stat4">0</strong><span>Countries</span></div>
+      </div>
+
+      <!-- Categories -->
+      <section class="home-section">
+        <div class="section-header">
+          <h2>Shop by <em>Category</em></h2>
+          <div class="section-line"></div>
+        </div>
+        <div class="category-grid" id="categoryGrid"></div>
+      </section>
+
+      <!-- Featured Products -->
+      <section class="home-section featured-section">
+        <div class="section-header">
+          <h2>Featured <em>Products</em></h2>
+          <div class="section-line"></div>
+          <a href="#" class="view-all" data-page="products">View All →</a>
+        </div>
+        <div class="products-grid" id="featuredGrid"></div>
+      </section>
+
+      <!-- Promo Banner -->
+      <div class="promo-banner">
+        <div class="promo-content">
+          <h3>Get 20% Off Your First Order</h3>
+          <p>Use code <strong>ALPHA20</strong> at checkout</p>
+          <button class="btn-gold" data-page="products">Shop Now</button>
+        </div>
+        <div class="promo-decoration">
+          <div class="promo-circle c1"></div>
+          <div class="promo-circle c2"></div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ════════════════════════════════
+         PRODUCTS PAGE
+    ════════════════════════════════ -->
+    <section id="page-products" class="page">
+      <div class="page-hero">
+        <h1>Our <em>Collection</em></h1>
+        <p>Discover premium products at every price point</p>
+      </div>
+
+      <div class="products-layout">
+        <!-- Sidebar Filter -->
+        <aside class="filter-sidebar">
+          <h3>Filter <em>By</em></h3>
+          <div class="filter-group">
+            <label class="filter-label">Category</label>
+            <div class="filter-options" id="categoryFilter"></div>
+          </div>
+          <div class="filter-group">
+            <label class="filter-label">Price Range</label>
+            <div class="price-range">
+              <input type="range" id="priceRange" min="0" max="500" value="500" />
+              <div class="price-display">Up to $<span id="priceVal">500</span></div>
+            </div>
+          </div>
+          <div class="filter-group">
+            <label class="filter-label">Sort By</label>
+            <select id="sortSelect" class="sort-select">
+              <option value="default">Default</option>
+              <option value="price-asc">Price: Low to High</option>
+              <option value="price-desc">Price: High to Low</option>
+              <option value="name-asc">Name: A–Z</option>
+            </select>
+          </div>
+          <button class="btn-outline" id="clearFilter">Clear Filters</button>
+        </aside>
+
+        <!-- Product Listing -->
+        <div class="products-main">
+          <!-- Search Bar -->
+          <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Search products…" />
+            <span class="search-icon">🔍</span>
+          </div>
+          <div class="results-info" id="resultsInfo"></div>
+          <div class="products-grid" id="productsGrid"></div>
+          <div class="no-results" id="noResults" style="display:none">
+            <div class="no-results-icon">🔍</div>
+            <h3>No products found</h3>
+            <p>Try adjusting your search or filters</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════
+         PRODUCT DETAIL PAGE
+    ════════════════════════════════ -->
+    <section id="page-detail" class="page">
+      <div class="breadcrumb">
+        <a href="#" data-page="home">Home</a> /
+        <a href="#" data-page="products">Products</a> /
+        <span id="detailBreadcrumb">Product</span>
+      </div>
+      <div class="detail-layout" id="detailLayout"></div>
+      <section class="related-section">
+        <div class="section-header">
+          <h2>Related <em>Products</em></h2>
+          <div class="section-line"></div>
+        </div>
+        <div class="products-grid" id="relatedGrid"></div>
+      </section>
+    </section>
+
+    <!-- ════════════════════════════════
+         CART PAGE
+    ════════════════════════════════ -->
+    <section id="page-cart" class="page">
+      <div class="page-hero">
+        <h1>Your <em>Cart</em></h1>
+      </div>
+      <div class="cart-layout">
+        <div class="cart-items" id="cartItems"></div>
+        <div class="cart-summary" id="cartSummary"></div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════
+         CHECKOUT PAGE
+    ════════════════════════════════ -->
+    <section id="page-checkout" class="page">
+      <div class="page-hero">
+        <h1>Check<em>out</em></h1>
+      </div>
+      <div class="checkout-layout">
+        <div class="checkout-form-wrap">
+          <form id="checkoutForm" novalidate>
+            <div class="form-section">
+              <h3>Personal <em>Info</em></h3>
+              <div class="form-row">
+                <div class="form-group">
+                  <label>First Name *</label>
+                  <input type="text" id="cfFirstName" placeholder="John" />
+                  <span class="field-error" id="errFirstName"></span>
+                </div>
+                <div class="form-group">
+                  <label>Last Name *</label>
+                  <input type="text" id="cfLastName" placeholder="Doe" />
+                  <span class="field-error" id="errLastName"></span>
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Email Address *</label>
+                <input type="email" id="cfEmail" placeholder="john@example.com" />
+                <span class="field-error" id="errEmail"></span>
+              </div>
+              <div class="form-group">
+                <label>Phone Number *</label>
+                <input type="tel" id="cfPhone" placeholder="+1 234 567 890" />
+                <span class="field-error" id="errPhone"></span>
+              </div>
+            </div>
+
+            <div class="form-section">
+              <h3>Delivery <em>Address</em></h3>
+              <div class="form-group">
+                <label>Street Address *</label>
+                <input type="text" id="cfAddress" placeholder="123 Main Street" />
+                <span class="field-error" id="errAddress"></span>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label>City *</label>
+                  <input type="text" id="cfCity" placeholder="New York" />
+                  <span class="field-error" id="errCity"></span>
+                </div>
+                <div class="form-group">
+                  <label>ZIP Code *</label>
+                  <input type="text" id="cfZip" placeholder="10001" />
+                  <span class="field-error" id="errZip"></span>
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Country *</label>
+                <select id="cfCountry">
+                  <option value="">Select Country</option>
+                  <option value="us">United States</option>
+                  <option value="uk">United Kingdom</option>
+                  <option value="ca">Canada</option>
+                  <option value="au">Australia</option>
+                  <option value="np">Nepal</option>
+                  <option value="in">India</option>
+                  <option value="other">Other</option>
+                </select>
+                <span class="field-error" id="errCountry"></span>
+              </div>
+            </div>
+
+            <div class="form-section">
+              <h3>Payment <em>Method</em></h3>
+              <div class="payment-options">
+                <label class="payment-opt">
+                  <input type="radio" name="payment" value="card" checked />
+                  <span class="pay-card">💳 Credit / Debit Card</span>
+                </label>
+                <label class="payment-opt">
+                  <input type="radio" name="payment" value="paypal" />
+                  <span class="pay-card">🅿 PayPal</span>
+                </label>
+                <label class="payment-opt">
+                  <input type="radio" name="payment" value="cod" />
+                  <span class="pay-card">💵 Cash on Delivery</span>
+                </label>
+              </div>
+              <div id="cardFields">
+                <div class="form-group">
+                  <label>Card Number *</label>
+                  <input type="text" id="cfCard" placeholder="1234 5678 9012 3456" maxlength="19" />
+                  <span class="field-error" id="errCard"></span>
+                </div>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label>Expiry *</label>
+                    <input type="text" id="cfExpiry" placeholder="MM/YY" maxlength="5" />
+                    <span class="field-error" id="errExpiry"></span>
+                  </div>
+                  <div class="form-group">
+                    <label>CVV *</label>
+                    <input type="text" id="cfCvv" placeholder="123" maxlength="3" />
+                    <span class="field-error" id="errCvv"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <button type="submit" class="btn-gold btn-full">Place Order →</button>
+          </form>
+        </div>
+        <div class="checkout-summary" id="checkoutSummary"></div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════
+         ABOUT PAGE
+    ════════════════════════════════ -->
+    <section id="page-about" class="page">
+      <div class="page-hero">
+        <h1>About <em>Us</em></h1>
+        <p>The story behind Alpha Giri Store</p>
+      </div>
+      <div class="about-layout">
+        <div class="about-story">
+          <div class="about-badge">Est. 2020</div>
+          <h2>We Believe in <em>Quality</em><br/>Without Compromise</h2>
+          <p>Alpha Giri Store was born from a simple idea: everyone deserves access to premium products without paying premium prices. We source the finest goods from across the globe, curating a collection that blends quality, style, and affordability.</p>
+          <p>Our team is passionate about customer experience. From the moment you land on our site to the day your package arrives at your door, we strive to make every interaction exceptional.</p>
+          <div class="about-values">
+            <div class="value-item">
+              <span class="value-icon">🏆</span>
+              <strong>Quality First</strong>
+              <p>Every product is vetted for quality before listing.</p>
+            </div>
+            <div class="value-item">
+              <span class="value-icon">🤝</span>
+              <strong>Customer Trust</strong>
+              <p>Transparent policies, honest pricing, real reviews.</p>
+            </div>
+            <div class="value-item">
+              <span class="value-icon">🌍</span>
+              <strong>Global Reach</strong>
+              <p>Shipping to 50+ countries worldwide.</p>
+            </div>
+            <div class="value-item">
+              <span class="value-icon">♻️</span>
+              <strong>Sustainability</strong>
+              <p>Eco-friendly packaging & ethical sourcing.</p>
+            </div>
+          </div>
+        </div>
+        <div class="about-visual">
+          <div class="about-card-stack">
+            <div class="about-card ac1">
+              <div class="ac-icon">500+</div>
+              <div class="ac-label">Products</div>
+            </div>
+            <div class="about-card ac2">
+              <div class="ac-icon">50K+</div>
+              <div class="ac-label">Customers</div>
+            </div>
+            <div class="about-card ac3">
+              <div class="ac-icon">4.9★</div>
+              <div class="ac-label">Avg Rating</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="team-section">
+        <div class="section-header">
+          <h2>Meet the <em>Founder</em></h2>
+          <div class="section-line"></div>
+        </div>
+        <div class="team-grid">
+          <div class="team-card">
+            <div class="team-avatar">AG</div>
+            <h4>Aalok Giri</h4>
+            <p class="team-role">Founder & CEO</p>
+            <p class="team-bio">Visionary entrepreneur with a passion for premium products and customer delight. Built Alpha Giri Store to bring world-class shopping to everyone.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════
+         CONTACT PAGE
+    ════════════════════════════════ -->
+    <section id="page-contact" class="page">
+      <div class="page-hero">
+        <h1>Get in <em>Touch</em></h1>
+        <p>We'd love to hear from you</p>
+      </div>
+      <div class="contact-layout">
+        <div class="contact-info">
+          <h3>Contact <em>Details</em></h3>
+          <div class="contact-item">
+            <span class="contact-icon">📍</span>
+            <div>
+              <strong>Address</strong>
+              <p>Kathmandu, Bagmati, Nepal</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon">📧</span>
+            <div>
+              <strong>Email</strong>
+              <p>hello@alphagiristore.com</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon">📞</span>
+            <div>
+              <strong>Phone</strong>
+              <p>+977 9800 000 000</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon">🕐</span>
+            <div>
+              <strong>Working Hours</strong>
+              <p>Mon–Fri: 9AM – 6PM</p>
+            </div>
+          </div>
+          <div class="social-links-contact">
+            <a href="#" class="social-link-c">FB</a>
+            <a href="#" class="social-link-c">TW</a>
+            <a href="#" class="social-link-c">IG</a>
+            <a href="#" class="social-link-c">YT</a>
+          </div>
+        </div>
+        <div class="contact-form-wrap">
+          <form id="contactForm" novalidate>
+            <div class="form-group">
+              <label>Your Name *</label>
+              <input type="text" id="ctName" placeholder="John Doe" />
+              <span class="field-error" id="errCtName"></span>
+            </div>
+            <div class="form-group">
+              <label>Email Address *</label>
+              <input type="email" id="ctEmail" placeholder="john@example.com" />
+              <span class="field-error" id="errCtEmail"></span>
+            </div>
+            <div class="form-group">
+              <label>Subject *</label>
+              <input type="text" id="ctSubject" placeholder="Order inquiry, feedback…" />
+              <span class="field-error" id="errCtSubject"></span>
+            </div>
+            <div class="form-group">
+              <label>Message *</label>
+              <textarea id="ctMessage" rows="6" placeholder="Write your message here…"></textarea>
+              <span class="field-error" id="errCtMsg"></span>
+            </div>
+            <button type="submit" class="btn-gold btn-full">Send Message →</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════
+         ORDER SUCCESS PAGE
+    ════════════════════════════════ -->
+    <section id="page-success" class="page">
+      <div class="success-container">
+        <div class="success-icon">✅</div>
+        <h1>Order <em>Placed!</em></h1>
+        <p>Thank you for shopping at Alpha Giri Store.<br/>Your order is confirmed and will be delivered soon.</p>
+        <div class="order-id" id="orderId"></div>
+        <button class="btn-gold" data-page="home">Continue Shopping</button>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ░░ FOOTER ░░ -->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <span class="logo-alpha">α</span>
+          <span class="logo-text">Alpha Giri Store</span>
+        </div>
+        <p>Premium products for the bold and discerning. Quality you can trust, prices you'll love.</p>
+        <div class="social-links">
+          <a href="#" class="social-link" aria-label="Facebook">f</a>
+          <a href="#" class="social-link" aria-label="Twitter">𝕏</a>
+          <a href="#" class="social-link" aria-label="Instagram">ig</a>
+          <a href="#" class="social-link" aria-label="YouTube">▶</a>
+          <a href="#" class="social-link" aria-label="TikTok">tt</a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>Shop</h4>
+          <a href="#" data-page="products">All Products</a>
+          <a href="#" data-page="products">New Arrivals</a>
+          <a href="#" data-page="products">Sale</a>
+          <a href="#" data-page="products">Featured</a>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <a href="#" data-page="about">About Us</a>
+          <a href="#" data-page="contact">Contact</a>
+          <a href="#">Blog</a>
+          <a href="#">Careers</a>
+        </div>
+        <div class="footer-col">
+          <h4>Support</h4>
+          <a href="#">FAQ</a>
+          <a href="#">Shipping Policy</a>
+          <a href="#">Returns</a>
+          <a href="#">Track Order</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Alpha Giri Store. All rights reserved.</p>
+      <p>Designed & Developed by <strong>Aalok Giri</strong></p>
+    </div>
+  </footer>
+
+  <script src="IND.JS"></script>
+</body>
+</html>
